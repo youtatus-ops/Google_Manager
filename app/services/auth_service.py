@@ -4,10 +4,11 @@
 """
 import time
 import hashlib
+import os
 from threading import Lock
 
 # 管理员密码（可以修改为您想要的密码）
-ADMIN_PASSWORD = "admin123"
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "admin123")
 
 # IP 封禁配置
 MAX_FAILED_ATTEMPTS = 3  # 最大失败次数
