@@ -1,0 +1,16 @@
+services:
+  google-manager:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: google-manager:latest
+    container_name: google-manager
+    restart: unless-stopped
+    environment:
+      FLASK_ENV: production
+      SECRET_KEY: ${SECRET_KEY:?set SECRET_KEY in .env}
+      DATABASE_URL: sqlite:////app/instance/accounts.db
+    volumes:
+      - /home/Google_Manager/instance:/app/instance
+    ports:
+      - "127.0.0.1:8002:8002"

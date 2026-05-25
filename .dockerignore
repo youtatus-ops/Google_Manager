@@ -1,0 +1,15 @@
+.git
+.idea
+frontend/.idea
+frontend/node_modules
+node_modules
+__pycache__
+*.py[cod]
+*.log
+.env
+.env.*
+instance
+*.db
+static
+dist
+build
